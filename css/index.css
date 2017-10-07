@@ -96,7 +96,7 @@ label{
 	padding: 10px 0px;
 }
 
-button{
+button {
 	padding: .5em 2em;
 	border: 0;
 	border-bottom: 3px solid;
@@ -108,10 +108,9 @@ button{
 	background-color:#0c8cd3;
 	border-color: #04324c;
 	width: 20%;
-    display: block;
-    clear: both;
-    margin: 10px 0px;
-
+  display: block;
+  clear: both;
+  margin: 10px 0px;
 }
 
 button:active{
@@ -125,10 +124,6 @@ button[disabled=disabled], button:disabled {
 
 }
 
-.adicionar-paciente{
+.adicionar-paciente {
     margin-top: 30px;
-}
-
-.campo-invalido{
-	border: 1px solid red;
 }
