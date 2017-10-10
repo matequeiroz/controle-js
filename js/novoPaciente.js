@@ -22,7 +22,11 @@ btn.addEventListener("click", function(event){
   alturaTd.textContent = paciente.altura;
   gorduraTd.textContent = paciente.gordura;
   imcTd.textContent = paciente.imc;
+<<<<<<< HEAD
    
+=======
+
+>>>>>>> master
 
   // Adicionando os atributos do paciente no TR
   pacienteTr.appendChild(nomeTd);

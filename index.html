@@ -4,12 +4,12 @@
 		<meta charset="UTF-8">
 		<title>Aparecida Nutrição</title>
 		<link rel="icon" href="favicon.ico" type="image/x-icon">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 		<link rel="stylesheet" type="text/css" href="css/reset.css">
 		<link rel="stylesheet" type="text/css" href="css/index.css">
-
+		<link rel="stylesheet" type="text/css" href="css/validator.css">
 	</head>
 	<body>
-
 		<header>
 			<div class="container" id="titulo-principal">
 				<h1>Aparecida Nutrição</h1>
@@ -69,9 +69,29 @@
 						</tr>
 					</tbody>
 				</table>
+				<hr/>
+
+				<h2>Adicionar paciente</h2>
+				<form class="form-group" id="form-adiciona">
+					<label for="nome">Nome:</label>
+					<input class="form-control" type="text" name="nome" value="" id="nome">
+
+					<label for="peso">Peso:</label>
+					<input class="form-control" type="text" name="peso" value="" id="peso">
+
+					<label for="altura">Altura:</label>
+					<input class="form-control" type="text" name="altura" value="" id="altura">
+
+					<label for="gordura">%Gordura	:</label>
+					<input class="form-control" type="text" name="gordura" value="" id="gordura">
+
+					<button class="btn btn-primary" type="submit" name="button" id="btn-adiciona">Adicionar</button>
+				</form>
 
 			</section>
 		</main>
-	<script type="text/javascript" src="js/calc-imc.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script type="text/javascript" src="js/calc-imc.js"></script>
+		<script type="text/javascript" src="js/novoPaciente.js"></script>
 	</body>
 </html>
