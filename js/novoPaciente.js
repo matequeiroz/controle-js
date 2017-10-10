@@ -4,41 +4,18 @@ var form = document.querySelector("#form-adiciona");
 
 btn.addEventListener("click", function(event){
   event.preventDefault();
-
-  //pegando o conteudo dos inputs do formulário
+  //obtendo os valores de entrada do form
   var paciente = pegarDados(form);
 
-  //criando um paciente
-  var pacienteTr = document.createElement("tr");
-  var nomeTd = document.createElement("td");
-  var pesoTd = document.createElement("td");
-  var alturaTd = document.createElement("td");
-  var gorduraTd = document.createElement("td");
-  var imcTd = document.createElement("td");
+  //criando um tr
+  var pacienteTr = criarTr(paciente);
 
-  // Adicionando conteúdo aos campos
-  nomeTd.textContent = paciente.nome;
-  pesoTd.textContent = paciente.peso;
-  alturaTd.textContent = paciente.altura;
-  gorduraTd.textContent = paciente.gordura;
-  imcTd.textContent = paciente.imc;
-<<<<<<< HEAD
-   
-=======
-
->>>>>>> master
-
-  // Adicionando os atributos do paciente no TR
-  pacienteTr.appendChild(nomeTd);
-  pacienteTr.appendChild(pesoTd);
-  pacienteTr.appendChild(alturaTd);
-  pacienteTr.appendChild(gorduraTd);
-  pacienteTr.appendChild(imcTd);
-
-  // Adicionando o paciente no html
+  //Adicionando o tr na tabela
   tabela.appendChild(pacienteTr);
-});
 
+  //limpando dados preenchidos do formulário
+  form.reset();
+});
 
 function pegarDados(form) {
   return {
@@ -48,4 +25,23 @@ function pegarDados(form) {
     "gordura": form.gordura.value,
     "imc": calculaImc(this.peso, this.altura)
   }
+}
+
+function criarTr(paciente){
+  //criando td com os atributos do paciente
+  var pacienteTr = document.createElement("tr");
+  pacienteTr.classList.add("paciente");
+  pacienteTr.appendChild(criaTd(paciente.nome, "info-nome"));
+  pacienteTr.appendChild(criaTd(paciente.peso, "info-peso"));
+  pacienteTr.appendChild(criaTd(paciente.altura, "info-altura"));
+  pacienteTr.appendChild(criaTd(paciente.gordura, "info-gordura"));
+  pacienteTr.appendChild(criaTd(paciente.imc, "info-imc"));
+  return pacienteTr;
+}
+
+function criaTd(dado, classe){
+  var td = document.createElement("td");
+  td.textContent = dado;
+  td.classList.add(classe);
+  return td;
 }
