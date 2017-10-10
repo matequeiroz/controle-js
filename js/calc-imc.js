@@ -36,12 +36,17 @@ for(let i = 0; i < pacientes.length; i++){
   }
 
   if(pesoValido && alturaValida){
-      var resultado = peso / (altura * altura);
+      var imc = calculaImc(peso, altura);
       if(pacientes[i].querySelector(".info-imc")){
           var tdImc = pacientes[i].querySelector(".info-imc");
-          tdImc.textContent = resultado.toFixed(2);
+          tdImc.textContent = imc;
       } else {
           alert("Campo inexistente!");
       }
   }
 };
+
+function calculaImc(peso, altura){
+  var imc = peso / (altura * altura);
+  return imc.toFixed(2);
+}
