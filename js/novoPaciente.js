@@ -6,8 +6,7 @@ btn.addEventListener("click", function(event){
   event.preventDefault();
 
   //pegando o conteudo dos inputs do formulário
-  var paciente = extrairDadosFormulario(form);
-  console.log(paciente);
+  var paciente = pegarDados(form);
 
   //criando um paciente
   var pacienteTr = document.createElement("tr");
@@ -24,6 +23,7 @@ btn.addEventListener("click", function(event){
   gorduraTd.textContent = paciente.gordura;
   imcTd.textContent = paciente.imc;
 
+
   // Adicionando os atributos do paciente no TR
   pacienteTr.appendChild(nomeTd);
   pacienteTr.appendChild(pesoTd);
@@ -35,13 +35,13 @@ btn.addEventListener("click", function(event){
   tabela.appendChild(pacienteTr);
 });
 
-function extrairDadosFormulario(form) {
-  var paciente = {
-    nome: form.nome.value,
-    altura: parseFloat(form.altura.value),
-    peso: parseFloat(form.peso.value),
-    gordura: form.gordura.value,
-    imc: calculaImc(this.peso, this.altura)
+
+function pegarDados(form) {
+  return {
+    "nome": form.nome.value,
+    "altura": parseFloat(form.altura.value),
+    "peso": parseFloat(form.peso.value),
+    "gordura": form.gordura.value,
+    "imc": calculaImc(this.peso, this.altura)
   }
-  return paciente;
 }
