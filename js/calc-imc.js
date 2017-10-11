@@ -1,5 +1,8 @@
+// obtendo todos os pacientes, um array de pacientes;
 var pacientes = document.querySelectorAll(".paciente");
 
+// for para varrer todos os pacientes da lista, validar o peso e a altura e por fim calcula seu imc, caso
+// seus campos sejam validos
 for(let i = 0; i < pacientes.length; i++){
   var paciente = pacientes[i];
 
@@ -24,11 +27,14 @@ for(let i = 0; i < pacientes.length; i++){
   }
 };
 
+
+// função para calculo do imc
 function calculaImc(peso, altura){
   var imc = peso / (altura * altura);
   return imc.toFixed(2);
 }
 
+//função para validar altura do paciente
 function validaAltura(altura){
   if(altura > 0 && altura < 3){
     return true;
@@ -37,6 +43,7 @@ function validaAltura(altura){
   }
 }
 
+//função para validar o peso do paciente
 function validaPeso(peso){
   if(peso > 0 && peso < 1000){
     return true;

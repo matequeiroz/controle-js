@@ -1,8 +1,15 @@
+// obtendo a tabela de pacientes
 var tabela = document.querySelector("#tabela-pacientes");
+
+//pegando o botão de adicionar
 var btn = document.querySelector("#btn-adiciona");
+
+//formulario de adicionar novos pacientes;
 var form = document.querySelector("#form-adiciona");
 
+
 btn.addEventListener("click", function(event){
+  //travando o evento padrão, ou seja, enviar o formulario para ser capturado.
   event.preventDefault();
   //obtendo os valores de entrada do form
   var paciente = pegarDados(form);
@@ -18,6 +25,7 @@ btn.addEventListener("click", function(event){
   form.reset();
 });
 
+//pegando os dados do formulario de adicionar pacientes e retornando um objeto paciente;
 function pegarDados(form) {
   var paciente =  {
     nome: form.nome.value,
@@ -29,6 +37,8 @@ function pegarDados(form) {
   return paciente;
 }
 
+// criando uma tr, ou seja, um paciente para ser inserido na tabela;
+// retornando essa tr
 function criarTr(paciente){
   //criando td com os atributos do paciente
   var pacienteTr = document.createElement("tr");
@@ -41,6 +51,7 @@ function criarTr(paciente){
   return pacienteTr;
 }
 
+//criando um para colocar o dado do paciente, como por exemplo: Nome, Peso...
 function criaTd(dado, classe){
   var td = document.createElement("td");
   td.textContent = dado;
