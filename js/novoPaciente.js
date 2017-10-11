@@ -6,6 +6,7 @@ btn.addEventListener("click", function(event){
   event.preventDefault();
   //obtendo os valores de entrada do form
   var paciente = pegarDados(form);
+  console.log(paciente);
 
   //criando um tr
   var pacienteTr = criarTr(paciente);
@@ -18,13 +19,14 @@ btn.addEventListener("click", function(event){
 });
 
 function pegarDados(form) {
-  return {
-    "nome": form.nome.value,
-    "altura": parseFloat(form.altura.value),
-    "peso": parseFloat(form.peso.value),
-    "gordura": form.gordura.value,
-    "imc": calculaImc(this.peso, this.altura)
+  var paciente =  {
+    nome: form.nome.value,
+    altura: parseFloat(form.altura.value),
+    peso: parseFloat(form.peso.value),
+    gordura: form.gordura.value,
+    imc: calculaImc(form.peso.value, form.altura.value)
   }
+  return paciente;
 }
 
 function criarTr(paciente){

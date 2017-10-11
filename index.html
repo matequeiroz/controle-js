@@ -29,7 +29,7 @@
 						</tr>
 					</thead>
 					<tbody id="tabela-pacientes">
-						<tr class="paciente" id="paciente-1">
+						<tr class="paciente">
 							<td class="info-nome">Paulo</td>
 							<td class="info-peso">100</td>
 							<td class="info-altura">2</td>
@@ -48,14 +48,14 @@
 						<tr class="paciente" >
 							<td class="info-nome">Erica</td>
 							<td class="info-peso">54</td>
-							<td class="info-altura">1.64</td>
+							<td class="info-altura">3.20</td>
 							<td class="info-gordura">14</td>
 							<td class="info-imc">0</td>
 						</tr>
 
 						<tr class="paciente">
 							<td class="info-nome">Douglas</td>
-							<td class="info-peso">85</td>
+							<td class="info-peso">8225</td>
 							<td class="info-altura">1.73</td>
 							<td class="info-gordura">24</td>
 							<td class="info-imc">0</td>
@@ -72,22 +72,25 @@
 				<hr/>
 
 				<h2>Adicionar paciente</h2>
-				<form class="form-group" id="form-adiciona">
-					<label for="nome">Nome:</label>
-					<input class="form-control" type="text" name="nome" value="" id="nome">
-
-					<label for="peso">Peso:</label>
-					<input class="form-control" type="text" name="peso" value="" id="peso">
-
-					<label for="altura">Altura:</label>
-					<input class="form-control" type="text" name="altura" value="" id="altura">
-
-					<label for="gordura">%Gordura	:</label>
-					<input class="form-control" type="text" name="gordura" value="" id="gordura">
-
+				<form id="form-adiciona">
+					<div class="form-group">
+						<label for="nome">Nome:</label>
+						<input class="form-control" type="text" name="nome" value="" id="nome">
+					</div>
+					<div class="form-group">
+						<label for="peso">Peso:</label>
+						<input class="form-control" type="text" name="peso" value="" id="peso">
+					</div>
+					<div class="form-group">
+						<label for="altura">Altura:</label>
+						<input class="form-control" type="text" name="altura" value="" id="altura">
+					</div>
+					<div class="form-group">
+						<label for="gordura">%Gordura	:</label>
+						<input class="form-control" type="text" name="gordura" value="" id="gordura">
+					</div>
 					<button class="btn btn-primary" type="submit" name="button" id="btn-adiciona">Adicionar</button>
 				</form>
-
 			</section>
 		</main>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
