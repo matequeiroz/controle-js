@@ -2,3 +2,7 @@
     background-color: #d9534f;
     color: #fff;
 }
+
+#mensagens-erros {
+  color: red;
+}

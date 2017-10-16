@@ -11,19 +11,37 @@ var form = document.querySelector("#form-adiciona");
 btn.addEventListener("click", function(event){
   //travando o evento padrão, ou seja, enviar o formulario para ser capturado.
   event.preventDefault();
+
   //obtendo os valores de entrada do form
   var paciente = pegarDados(form);
-  console.log(paciente);
 
-  //criando um tr
-  var pacienteTr = criarTr(paciente);
+  //um array de erros
+  var error = validaPaciente(paciente);
 
-  //Adicionando o tr na tabela
-  tabela.appendChild(pacienteTr);
-
-  //limpando dados preenchidos do formulário
-  form.reset();
+  if(error.length > 0){
+    exibirErros(error);
+  } else {
+    //criando um tr
+    var pacienteTr = criarTr(paciente);
+    //Adicionando o tr na tabela
+    tabela.appendChild(pacienteTr);
+    //limpando dados preenchidos do formulário
+    form.reset();
+    var ul = document.querySelector("#mensagens-erros");
+    ul.innerHTML = "";
+  }
 });
+
+function exibirErros(erros){
+  var ul = document.querySelector("#mensagens-erros");
+  ul.innerHTML = "";
+  erros.forEach(function(erro){
+    var li = document.createElement("li");
+    li.textContent = erro;
+    ul.appendChild(li);
+  });
+
+}
 
 //pegando os dados do formulario de adicionar pacientes e retornando um objeto paciente;
 function pegarDados(form) {
@@ -57,4 +75,31 @@ function criaTd(dado, classe){
   td.textContent = dado;
   td.classList.add(classe);
   return td;
+}
+
+function validaPaciente(paciente){
+  var pesoValido = validaPeso(paciente.peso);
+  var alturaValida = validaAltura(paciente.altura);
+  var arrayErros = [];
+
+  if(paciente.nome.length == 0) {
+    arrayErros.push("Nome não pode ser vazio!");
+  }
+
+  if(paciente.altura.length == 0) {
+    arrayErros.push("Altura não pode ser vazia!");
+  }
+
+  if(paciente.peso.length == 0) {
+    arrayErros.push("Peso não pode ser vazio!");
+  }
+
+  if(paciente.gordura.length == 0) {
+    arrayErros.push("Gordura não pode ser vazio!");
+  }
+
+
+
+  return arrayErros;
+
 }

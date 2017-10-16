@@ -1,7 +1,7 @@
 // obtendo todos os pacientes, um array de pacientes;
 var pacientes = document.querySelectorAll(".paciente");
 
-// for para varrer todos os pacientes da lista, validar o peso e a altura e por fim calcula seu imc, caso
+// "for" para varrer todos os pacientes da lista, validar o peso e a altura e por fim calcula seu imc, caso
 // seus campos sejam validos
 for(let i = 0; i < pacientes.length; i++){
   var paciente = pacientes[i];
@@ -9,6 +9,7 @@ for(let i = 0; i < pacientes.length; i++){
   var peso = parseFloat(paciente.querySelector(".info-peso").textContent);
   var altura = parseFloat(paciente.querySelector(".info-altura").textContent);
   var tdImc = paciente.querySelector(".info-imc");
+
   var alturaValida = validaAltura(altura);
   var pesoValido = validaPeso(peso);
 
