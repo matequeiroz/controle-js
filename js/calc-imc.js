@@ -1,5 +1,5 @@
 // obtendo todos os pacientes, um array de pacientes;
-var pacientes = document.querySelectorAll(".paciente");
+var pacientes = buscarPacientes();
 
 // "for" para varrer todos os pacientes da lista, validar o peso e a altura e por fim calcula seu imc, caso
 // seus campos sejam validos
@@ -51,4 +51,8 @@ function validaPeso(peso){
   } else {
     return false;
   }
+}
+
+function buscarPacientes() {
+  return document.querySelectorAll(".paciente");
 }

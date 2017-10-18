@@ -109,3 +109,17 @@ button[disabled=disabled], button:disabled {
 #form-adiciona input {
 	margin: 10px 0;
 }
+
+.delayRemove {
+	opacity: 0;
+	transition: 0.5s;
+}
+
+#filtro-pacientes {
+	width: 200px;
+	margin: 10px 0;
+}
+
+.ocultarTr {
+	display: none;
+}

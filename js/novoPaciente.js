@@ -97,9 +97,5 @@ function validaPaciente(paciente){
   if(paciente.gordura.length == 0) {
     arrayErros.push("Gordura não pode ser vazio!");
   }
-
-
-
   return arrayErros;
-
 }
