@@ -15,11 +15,11 @@ btn.addEventListener("click", function(event){
   //obtendo os valores de entrada do form
   var paciente = pegarDados(form);
 
-  //um array de erros
-  var error = validaPaciente(paciente);
+  //um array
+  var response = validaPaciente(paciente);
 
-  if(error.length > 0){
-    exibirErros(error);
+  if(response.length > 0){
+    exibirErros(response);
   } else {
     //criando um tr
     var pacienteTr = criarTr(paciente);

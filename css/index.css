@@ -123,3 +123,7 @@ button[disabled=disabled], button:disabled {
 .ocultarTr {
 	display: none;
 }
+
+#btn-buscar {
+	margin: 15px 0 25px;
+}
