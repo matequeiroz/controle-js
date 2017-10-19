@@ -127,3 +127,7 @@ button[disabled=disabled], button:disabled {
 #btn-buscar {
 	margin: 15px 0 25px;
 }
+
+.ocultarSpan {
+	display: none;
+}

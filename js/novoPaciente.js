@@ -1,36 +1,37 @@
-// obtendo a tabela de pacientes
-var tabela = document.querySelector("#tabela-pacientes");
-
 //pegando o botão de adicionar
 var btn = document.querySelector("#btn-adiciona");
 
 //formulario de adicionar novos pacientes;
 var form = document.querySelector("#form-adiciona");
 
-
-btn.addEventListener("click", function(event){
+btn.addEventListener("click", function(e){
   //travando o evento padrão, ou seja, enviar o formulario para ser capturado.
-  event.preventDefault();
+  e.preventDefault();
 
   //obtendo os valores de entrada do form
   var paciente = pegarDados(form);
 
   //um array
   var response = validaPaciente(paciente);
-
   if(response.length > 0){
     exibirErros(response);
   } else {
-    //criando um tr
-    var pacienteTr = criarTr(paciente);
-    //Adicionando o tr na tabela
-    tabela.appendChild(pacienteTr);
+    adicionarPacienteTabela(paciente);
     //limpando dados preenchidos do formulário
     form.reset();
     var ul = document.querySelector("#mensagens-erros");
     ul.innerHTML = "";
   }
 });
+
+function adicionarPacienteTabela(paciente){
+  //criando um tr
+  var pacienteTr = criarTr(paciente);
+  // obtendo a tabela de pacientes
+  var tabela = document.querySelector("#tabela-pacientes");
+  //Adicionando o tr na tabela
+  tabela.appendChild(pacienteTr);
+}
 
 function exibirErros(erros){
   var ul = document.querySelector("#mensagens-erros");
